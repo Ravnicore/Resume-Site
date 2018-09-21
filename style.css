@@ -1,0 +1,155 @@
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  padding-bottom: 6rem;
+  min-height: 100%;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
+  border-top-style: solid; 
+  border-top-width: 2px;
+  border-top-color: #515151;
+}
+
+.allTitles {
+    text-align: center;
+}
+
+.PicContainer{
+
+}
+
+.PicInfo{
+    padding-left: 2em;
+    text-align: center;
+}
+
+
+
+.jumbotron {
+    z-index: 1;
+    margin-bottom: 0.5em;
+    padding-bottom: 1em;
+    position: relative;
+    overflow: hidden;
+    text-align: left;
+    background-color: lightblue;
+    background-image: linear-gradient(to bottom right, #4DC1F9, #5CDB72);
+    /*background-image: radial-gradient(#4DC1F9, #5CDB72, #A478F9);*/
+}
+
+.MyPic {
+    margin-top: 10px;
+    flex-grow: 1;
+    border-radius: 30%
+}
+
+#buttonResume {
+    box-shadow: 0 7px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    transition-duration: 0.3s;
+}
+
+#buttonResume:hover {
+    cursor: pointer;
+}
+
+#buttonResume:focus { outline: none;}
+
+#buttonResume:active {
+    transition-duration: 0.0s;
+    transform: translateX(0.3em);
+    padding: 0.3em;
+}
+
+.jumbotron h1{
+    padding-top: 0.7em;
+    position: relative;
+    z-index: 2;
+    font-weight: bold;
+    color: black;
+}
+
+.jumbotron h2{
+    position: relative;
+    z-index: 2;
+    padding-top: 0.4em;
+    font-size: 1.2em;
+    color: black;
+}
+
+.jumbotron #buttonResume{
+    position: relative;
+    z-index: 2;
+    margin-top: 2em;
+    background-color: #9A28DD;
+    border-color: #9A28DD;
+}
+
+
+hr {
+    border-width: 2px;
+    border-color: #A09FA4;
+}
+
+
+
+
+.ResumeInfo {
+    padding-left: 2em;
+    text-align: left;
+}
+
+ .infoWork {
+    padding-top: 0.4em;
+ }
+
+.infoSkills {
+    padding-top: 0.7em;
+}
+
+.ResumeEdu {
+    padding-left: 2em;
+    text-align: left;
+}
+
+.EduBold{
+    padding-top: 1em;
+    font-weight: bold;
+}
+
+
+.introText {
+    z-index: -5;
+}
+
+.allText {
+    position: relative;
+}
+
+.slide {
+    position: absolute; right: 0; left: 0;
+}
+
+.buttonHomeAlign {
+    text-align: center
+}
