@@ -100,7 +100,7 @@ document.getElementById('homeNav').addEventListener("click", function(e){
 });
 document.getElementById('workNav').addEventListener("click", function(e){
     e.preventDefault(); // stop from scrolling back to top of page
-    scrollToTop(1000); 
+    scrolIDIntoView('workReplaceText'); 
     //Set the box size to match text it takes up.
     resumeTextSettingBoxSize = $('#workReplaceText').height();
     $('.allText').css('height', resumeTextSettingBoxSize);
@@ -114,7 +114,7 @@ document.getElementById('workNav').addEventListener("click", function(e){
 });
 document.getElementById('skillNav').addEventListener("click", function(e){
     e.preventDefault(); // stop from scrolling back to top of page
-    scrollToTop(1000); 
+    scrolIDIntoView('skillReplaceText'); 
     //Set the box size to match text it takes up.
     resumeTextSettingBoxSize = $('#skillReplaceText').height();
     $('.allText').css('height', resumeTextSettingBoxSize);
@@ -128,7 +128,7 @@ document.getElementById('skillNav').addEventListener("click", function(e){
 });
 document.getElementById('eduNav').addEventListener("click", function(e){
 	e.preventDefault(); // stop from scrolling back to top of page
-    scrollToTop(1000); 
+    scrolIDIntoView('eduReplaceText'); 
     //Set the box size to match text it takes up.
     resumeTextSettingBoxSize = $('#eduReplaceText').height();
     $('.allText').css('height', resumeTextSettingBoxSize);
@@ -161,7 +161,7 @@ window.onload = function(){
 };
 document.getElementById('buttonWork').addEventListener("click", function(e){
     e.preventDefault(); // stop from scrolling back to top of page
-    scrollToTop(1000); 
+    scrolIDIntoView('workReplaceText'); 
     //Set the box size to match text it takes up.
     resumeTextSettingBoxSize = $('#workReplaceText').height();
     $('.allText').css('height', resumeTextSettingBoxSize);
@@ -175,7 +175,7 @@ document.getElementById('buttonWork').addEventListener("click", function(e){
 });
 document.getElementById('buttonSkills').addEventListener("click", function(e){
 	e.preventDefault(); // stop from scrolling back to top of page
-    scrollToTop(1000); 
+    scrolIDIntoView('skillReplaceText'); 
     //Set the box size to match text it takes up.
     resumeTextSettingBoxSize = $('#skillReplaceText').height();
     $('.allText').css('height', resumeTextSettingBoxSize);
@@ -189,7 +189,7 @@ document.getElementById('buttonSkills').addEventListener("click", function(e){
 });
 document.getElementById('buttonEdu').addEventListener("click", function(e){
 	e.preventDefault(); // stop from scrolling back to top of page
-    scrollToTop(1000); 
+    scrolIDIntoView('eduReplaceText'); 
     //Set the box size to match text it takes up.
     resumeTextSettingBoxSize = $('#eduReplaceText').height();
     $('.allText').css('height', resumeTextSettingBoxSize);
@@ -212,6 +212,10 @@ function scrollToTop(scrollDuration) {
     },15);
 }
 
+function scrolIDIntoView(ID){
+    let elm = document.getElementById(ID);
+    elm.scrollIntoView({behavior: "instant", block: "end", inline: "end"});
+}
 
 //this would be for ease in and out scrolling.
 // function scrollToTop(scrollDuration) {
