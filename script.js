@@ -14,6 +14,9 @@ window.addEventListener("resize", function(){
     if (dataStep === 3){resumeTextSettingBoxSize = $('#skillReplaceText').height();}
     if (dataStep === 4){resumeTextSettingBoxSize = $('#eduReplaceText').height();}
     $('.allText').css('height', resumeTextSettingBoxSize);
+
+    let footerHeight= $('.footer').height();
+    console.log(footerHeight);
 });
 //---------------------------------------------------
 var dataStep = 1; //Pre-set value for homepage.
@@ -80,7 +83,9 @@ function recolorTheNav(newHighlight){
         document.getElementById('eduNav').style.color = "white";
     }
 }
-document.getElementById('homeNav').addEventListener("click", function(){
+document.getElementById('homeNav').addEventListener("click", function(e){
+    e.preventDefault(); // stop from scrolling back to top of page
+    scrollToTop(1500);
     //Set the box size to match text it takes up.
     resumeTextSettingBoxSize = $('#introText').height();
     $('.allText').css('height', resumeTextSettingBoxSize);
@@ -95,10 +100,10 @@ document.getElementById('homeNav').addEventListener("click", function(){
 });
 document.getElementById('workNav').addEventListener("click", function(e){
     e.preventDefault(); // stop from scrolling back to top of page
+    scrollToTop(1000); 
     //Set the box size to match text it takes up.
     resumeTextSettingBoxSize = $('#workReplaceText').height();
     $('.allText').css('height', resumeTextSettingBoxSize);
-
     let $oldBox = getPreviousBox('workNav', dataStep);
     //check if we are selecting the same page to transition to
     if ($oldBox === "Current page"){return console.log("We are already on that page.");}
@@ -108,10 +113,11 @@ document.getElementById('workNav').addEventListener("click", function(e){
     dataStep = 2;
 });
 document.getElementById('skillNav').addEventListener("click", function(e){
+    e.preventDefault(); // stop from scrolling back to top of page
+    scrollToTop(1000); 
     //Set the box size to match text it takes up.
     resumeTextSettingBoxSize = $('#skillReplaceText').height();
     $('.allText').css('height', resumeTextSettingBoxSize);
-    e.preventDefault(); // stop from scrolling back to top of page
     let $oldBox = getPreviousBox('skillNav', dataStep);
     //check if we are selecting the same page to transition to
     if ($oldBox === "Current page"){return console.log("We are already on that page.");}
@@ -122,10 +128,10 @@ document.getElementById('skillNav').addEventListener("click", function(e){
 });
 document.getElementById('eduNav').addEventListener("click", function(e){
 	e.preventDefault(); // stop from scrolling back to top of page
+    scrollToTop(1000); 
     //Set the box size to match text it takes up.
     resumeTextSettingBoxSize = $('#eduReplaceText').height();
     $('.allText').css('height', resumeTextSettingBoxSize);
-
     let $oldBox = getPreviousBox('eduNav', dataStep);
     //check if we are selecting the same page to transition to
     if ($oldBox === "Current page"){return console.log("We are already on that page.");}
@@ -137,7 +143,9 @@ document.getElementById('eduNav').addEventListener("click", function(e){
 window.onload = function(){
     var homeButtons = document.getElementsByClassName('buttonHome');
     for (let i = 0; i < homeButtons.length; i++) {
-        homeButtons[i].addEventListener("click", function(){
+        homeButtons[i].addEventListener("click", function(e){
+            e.preventDefault(); // stop from scrolling back to top of page
+            scrollToTop(1500);
             //Set the box size to match text it takes up.
             resumeTextSettingBoxSize = $('#introText').height();
             $('.allText').css('height', resumeTextSettingBoxSize);
@@ -153,10 +161,10 @@ window.onload = function(){
 };
 document.getElementById('buttonWork').addEventListener("click", function(e){
     e.preventDefault(); // stop from scrolling back to top of page
+    scrollToTop(1000); 
     //Set the box size to match text it takes up.
     resumeTextSettingBoxSize = $('#workReplaceText').height();
     $('.allText').css('height', resumeTextSettingBoxSize);
-
 	let $oldBox = getPreviousBox('buttonWork', dataStep);
     //check if we are selecting the same page to transition to
     if ($oldBox === "Current page"){return console.log("We are already on that page.");}
@@ -167,10 +175,10 @@ document.getElementById('buttonWork').addEventListener("click", function(e){
 });
 document.getElementById('buttonSkills').addEventListener("click", function(e){
 	e.preventDefault(); // stop from scrolling back to top of page
+    scrollToTop(1000); 
     //Set the box size to match text it takes up.
     resumeTextSettingBoxSize = $('#skillReplaceText').height();
     $('.allText').css('height', resumeTextSettingBoxSize);
-
     let $oldBox = getPreviousBox('buttonSkills', dataStep);
     //check if we are selecting the same page to transition to
     if ($oldBox === "Current page"){return console.log("We are already on that page.");}
@@ -181,10 +189,10 @@ document.getElementById('buttonSkills').addEventListener("click", function(e){
 });
 document.getElementById('buttonEdu').addEventListener("click", function(e){
 	e.preventDefault(); // stop from scrolling back to top of page
+    scrollToTop(1000); 
     //Set the box size to match text it takes up.
     resumeTextSettingBoxSize = $('#eduReplaceText').height();
     $('.allText').css('height', resumeTextSettingBoxSize);
-
     let $oldBox = getPreviousBox('buttonEdu', dataStep);
     //check if we are selecting the same page to transition to
     if ($oldBox === "Current page"){return console.log("We are already on that page.");}
@@ -194,6 +202,42 @@ document.getElementById('buttonEdu').addEventListener("click", function(e){
     dataStep = 4;
 });
 
+function scrollToTop(scrollDuration) {
+    let scrollStep = -window.scrollY / (scrollDuration / 15),
+        scrollInterval = setInterval(function(){
+        if ( window.scrollY != 0 ) {
+            window.scrollBy( 0, scrollStep );
+        }
+        else clearInterval(scrollInterval); 
+    },15);
+}
 
 
+//this would be for ease in and out scrolling.
+// function scrollToTop(scrollDuration) {
+//     var cosParameter = window.scrollY / 2,
+//         scrollCount = 0,
+//         oldTimestamp = performance.now();
+//     function step (newTimestamp) {
+//         scrollCount += Math.PI / (scrollDuration / (newTimestamp - oldTimestamp));
+//         if (scrollCount >= Math.PI) window.scrollTo(0, 0);
+//         if (window.scrollY === 0) return;
+//         window.scrollTo(0, Math.round(cosParameter + cosParameter * Math.cos(scrollCount)));
+//         oldTimestamp = newTimestamp;
+//         window.requestAnimationFrame(step);
+//     }
+//     window.requestAnimationFrame(step);
+// }
+/* 
+    Explanations:
+    - pi is the length/end point of the cosinus intervall (see above)
+    - newTimestamp indicates the current time when callbacks queued by requestAnimationFrame begin to fire.
+      (for more information see https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame)
+    - newTimestamp - oldTimestamp equals the duration
 
+      a * cos (bx + c) + d                      | c translates along the x axis = 0
+    = a * cos (bx) + d                          | d translates along the y axis = 1 -> only positive y values
+    = a * cos (bx) + 1                          | a stretches along the y axis = cosParameter = window.scrollY / 2
+    = cosParameter + cosParameter * (cos bx)    | b stretches along the x axis = scrollCount = Math.PI / (scrollDuration / (newTimestamp - oldTimestamp))
+    = cosParameter + cosParameter * (cos scrollCount * x)
+*/
