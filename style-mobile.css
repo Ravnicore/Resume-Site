@@ -1,3 +1,4 @@
+/*Testing on Samsung J7, 373px Portrait, OR 651px in landscape*/
 
 
 html {
@@ -33,26 +34,32 @@ body {
   border-top-color: #515151;
 }
 
+.navbar {
+  padding-top: 1em;
+}
+
 .allTitles {
     text-align: center;
 }
 
 .PicContainer{
-
+  width: 100%;
+  text-align: center;
 }
 
 .PicInfo{
-    padding-left: 2em;
     text-align: center;
 }
 
-
+.PicContainer img {
+  padding-top: 1em;
+  width: 100%;
+}
 
 .jumbotron {
     z-index: 1;
     margin-top: 1.0em;
     margin-bottom: 1em;
-    padding-bottom: 3.3em;
     position: relative;
     overflow: hidden;
     text-align: left;
@@ -89,7 +96,9 @@ body {
     position: relative;
     z-index: 2;
     font-weight: bold;
+    font-size: 3em;
     color: black;
+ /*   display: inline-block;*/
     border-bottom: 2px solid black;
 }
 
@@ -97,7 +106,7 @@ body {
     position: relative;
     z-index: 2;
     padding-top: 0.4em;
-    font-size: 1.2em;
+    font-size: 1em;
     color: black;
 }
 
@@ -148,6 +157,7 @@ hr {
 
 .allText {
     position: relative;
+    font-size: 80%;
 }
 
 .allText h4{
@@ -156,21 +166,41 @@ hr {
   border-bottom: 2px dotted blue;
 }
 
-#workReplaceText h3{
+#workReplaceText:not(h2)  {
+  padding-left: 1em;
+  padding-right: 1em;
+}
 
+#workReplaceText h2{
+  text-align: center;
+  padding-left: 0;
+}
+
+#workReplaceText h3{
+  text-align: left;
+  font-size: 1.6em;
   display: inline-block;
   border-bottom: 1px dotted blue;
   padding-left: 0;
 }
 
+#workReplaceText p{
+  padding-right: 1em;
+}
+#workReplaceText li{
+  padding-right: 1em;
+}
+
+
 .slide {
     position: absolute; right: 0; left: 0;
 }
-
 
 .buttonHomeAlign {
     text-align: center
 }
 
-
-
+[class*="col-"] {
+        width: 100%;
+        font-size: 100%
+    }

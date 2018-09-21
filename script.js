@@ -1,14 +1,21 @@
 
+
+
 //Setting up to create the max container size for the resume text.
 //Otherwise the absolute position for when the text slides 
 //will cause issues for footer or other fields to be added later on.
 var resumeTextSettingBoxSize = 0;
     resumeTextSettingBoxSize = $('#introText').height();
     $('.allText').css('height', resumeTextSettingBoxSize);
-    
 //---------------------------------------------------
+window.addEventListener("resize", function(){
+    if (dataStep === 1){resumeTextSettingBoxSize = $('#introText').height();}
+    if (dataStep === 2){resumeTextSettingBoxSize = $('#workReplaceText').height();}
+    if (dataStep === 3){resumeTextSettingBoxSize = $('#skillReplaceText').height();}
+    if (dataStep === 4){resumeTextSettingBoxSize = $('#eduReplaceText').height();}
+    $('.allText').css('height', resumeTextSettingBoxSize);
+});
 //---------------------------------------------------
-
 var dataStep = 1; //Pre-set value for homepage.
 function getPreviousBox(id, Step){
     if(id ==='homeNav' || id === 'buttonHome'){
@@ -100,7 +107,6 @@ document.getElementById('workNav').addEventListener("click", function(e){
     recolorTheNav('workNav');
     dataStep = 2;
 });
-
 document.getElementById('skillNav').addEventListener("click", function(e){
     //Set the box size to match text it takes up.
     resumeTextSettingBoxSize = $('#skillReplaceText').height();
@@ -159,7 +165,6 @@ document.getElementById('buttonWork').addEventListener("click", function(e){
     recolorTheNav('buttonWork');
     dataStep = 2;
 });
-
 document.getElementById('buttonSkills').addEventListener("click", function(e){
 	e.preventDefault(); // stop from scrolling back to top of page
     //Set the box size to match text it takes up.
@@ -174,7 +179,6 @@ document.getElementById('buttonSkills').addEventListener("click", function(e){
     recolorTheNav('buttonSkills');
     dataStep = 3;
 });
-
 document.getElementById('buttonEdu').addEventListener("click", function(e){
 	e.preventDefault(); // stop from scrolling back to top of page
     //Set the box size to match text it takes up.
