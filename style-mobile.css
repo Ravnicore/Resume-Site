@@ -209,6 +209,11 @@ hr {
     position: absolute; right: 0; left: 0;
 }
 
+.skillPageTextParagraph {
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
 .buttonHomeAlign {
     text-align: center
 }
