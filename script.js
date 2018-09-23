@@ -1,5 +1,7 @@
 
-
+// $('.navbar-nav>li>a').on('click', function(){
+//     $('.navbar-collapse').collapse('hide');
+// });
 
 //Setting up to create the max container size for the resume text.
 //Otherwise the absolute position for when the text slides 
@@ -14,9 +16,6 @@ window.addEventListener("resize", function(){
     if (dataStep === 3){resumeTextSettingBoxSize = $('#skillReplaceText').height();}
     if (dataStep === 4){resumeTextSettingBoxSize = $('#eduReplaceText').height();}
     $('.allText').css('height', resumeTextSettingBoxSize);
-
-    let footerHeight= $('.footer').height();
-    console.log(footerHeight);
 });
 //---------------------------------------------------
 var dataStep = 1; //Pre-set value for homepage.
@@ -189,7 +188,7 @@ document.getElementById('buttonSkills').addEventListener("click", function(e){
 });
 document.getElementById('buttonEdu').addEventListener("click", function(e){
 	e.preventDefault(); // stop from scrolling back to top of page
-    scrolIDIntoView('eduReplaceText'); 
+    window.scrollTo(0,document.body.scrollHeight);
     //Set the box size to match text it takes up.
     resumeTextSettingBoxSize = $('#eduReplaceText').height();
     $('.allText').css('height', resumeTextSettingBoxSize);
