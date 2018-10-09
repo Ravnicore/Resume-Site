@@ -56,7 +56,30 @@ footer {
     text-align: center;
 }
 
+.Icon {
+  margin-left: 0.5em;
+  font-size: 2em; 
+  color: lightblue; 
+  float: right;
+}
 
+.Icon:hover{
+  cursor: pointer;
+  transition-duration: 0.25s;
+  color: lightgreen;
+}
+
+.Icon:active{
+  cursor: pointer;
+  transition-duration: 0.0s;
+  transform: scale(0.8);
+}
+
+.navbar-nav.navbar-center {
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+}
 
 .jumbotron {
     z-index: 1;
