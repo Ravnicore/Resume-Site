@@ -56,7 +56,12 @@
             <a class="nav-link" href="#" id="eduNav" data-toggle="collapse" data-target=".navbar-collapse.show">Education/Honors</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" id="ContactInfoNav" data-toggle="modal" data-target="#exampleModalCenter">Contact Information</a>
+            <a class="nav-link" href="#" id="projectNav" data-toggle="collapse" data-target=".navbar-collapse.show">My Projects</a>
+          </li>
+          <li class="nav-item">
+            <span data-toggle="collapse" data-target=".navbar-collapse.show">
+              <a class="nav-link" href="#" id="ContactInfoNav" data-toggle="modal" data-target="#exampleModalCenter">Contact Information</a>
+            </span>
           </li>
         </ul>
       </div>
@@ -66,22 +71,21 @@
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Contact Information</h5>
+            <h2 class="modal-title" id="exampleModalLongTitle" style="font-weight: bold;">Contact Information</h2>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body">
-            <h4>E-mail</h4>
+          <div class="modal-body text-center">
+            <h4 style="border-bottom: 2px solid black; display: inline-block;">E-mail</h4>
             <p>kevin.m.kelly@live.com</p><br>
-            <h4>Phone</h4>
+            <h4 style="border-bottom: 2px solid black; display: inline-block;">Phone</h4>
             <p>(732)-856-1580</p><br>
-            <h4><i class="fab fa-linkedin"></i> Linked-In</i></h4>
+            <h4 style="border-bottom: 2px solid black; display: inline-block;"><i class="fab fa-linkedin"></i> Linked-In</i></h4>
             <p><a href="https://www.linkedin.com/in/kevin--kelly" target="_blank">www.linkedin.com/in/kevin--kelly</a></p>
           </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal" data-toggle="collapse" data-target=".navbar-collapse.show">Close</button>
-            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+          <div class="modal-footer d-flex justify-content-center">
+            <button type="button" class="btn btn-dark modalClose" data-dismiss="modal" data-toggle="collapse" data-target=".navbar-collapse.show">Close</button>
           </div>
         </div>
       </div>
@@ -107,7 +111,7 @@
       </div>
 
       <div class="allText container-fluid" id="resume-text-body">
-        <!-- Example row of columns -->
+        <!-- row of columns -->
         <div class="slide animated fadeInDown delay-1s" id="introText" data-step="1" >
           <div class="row">
             <div class="col-md-4 col-sm-12 allTitles">
@@ -323,6 +327,37 @@
             </div>
           </div>
         </div> 
+        <div class="slide" id="projectReplaceText" data-step="5" style="display:none">
+          <div class="row">
+            <div class="col-1">
+            </div>
+            <div class="col-10">
+              <h1>My Projects</h1>
+              <hr>
+            </div>
+            <div class="col-1">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-1">
+            </div>
+            <div class="col-10">
+              <ul class="">
+                <li>[React] Filtering My Robot Friends</li>
+                  <ul>
+                    <a href="https://www.linkedin.com/in/kevin--kelly" target="_blank">https://ravnicore.github.io/Filter-Robot-Friends/</a>
+                  </ul>
+              </ul>
+            </div>
+            <div class="col-1">            
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <p class="buttonHomeAlign"><a id="buttonHome3" class="btn btn-secondary buttonHome" href="#" role="button" style="margin-top: 3em;">Return Home</a></p>
+            </div>
+          </div>
+        </div>
       </div> <!-- /container -->
     </main>
 

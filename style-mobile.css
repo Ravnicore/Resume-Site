@@ -33,17 +33,21 @@ footer {
   color: #fff;
 }
 
-.footer {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 1rem;
-  background-color: #efefef;
-  border-top-style: solid; 
-  border-top-width: 2px;
-  border-top-color: #515151;
+.modal-content {
+  border: 3px solid black;
+  box-shadow: 0 7px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
+
+.modal-header {
+  background-color: lightblue;
+  border-bottom: 1px solid gray;
+}
+
+.modal-footer {
+  background-color: lightblue;
+  border-top: 1px solid gray;
+}
+
 
 .navbar {
 
@@ -84,6 +88,11 @@ footer {
   cursor: pointer;
   transition-duration: 0.0s;
   transform: scale(0.8);
+}
+
+.NavigationLinkBox {
+  float: right;
+  text-align: right;
 }
 
 .PicContainer img {

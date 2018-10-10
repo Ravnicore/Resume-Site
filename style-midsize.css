@@ -33,16 +33,23 @@ footer {
   color: #fff;
 }
 
-.footer {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 1rem;
-  background-color: #efefef;
-  border-top-style: solid; 
-  border-top-width: 2px;
-  border-top-color: #515151;
+.modal-content {
+  border: 3px solid black;
+  box-shadow: 0 7px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.modal-header {
+  background-color: lightblue;
+  border-bottom: 1px solid gray;
+}
+
+.modal-footer {
+  background-color: lightblue;
+  border-top: 1px solid gray;
+}
+
+.modalClose{
+   
 }
 
 .allTitles {
@@ -67,13 +74,13 @@ footer {
 .IconBox {
   margin-left: 0.25em;
   margin-right: 1rem;
+  float: left;
 }
 
 .Icon {
   padding-right: 0.75rem;
   font-size: 3em; 
   color: lightblue; 
-  float: right;
 }
 
 .Icon:hover{
@@ -92,6 +99,10 @@ footer {
     margin: 0;
 }
 
+.NavigationLinkBox {
+  float: right;
+  text-align: right;
+}
 
 .jumbotron {
     z-index: 1;
@@ -108,7 +119,7 @@ footer {
 
 .MyPic {
     margin-top: 10px;
-    flex-grow: 1;
+    
     border-radius: 30%;
     box-shadow: 0 10px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
