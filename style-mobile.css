@@ -13,23 +13,33 @@ html {
 }
 
 body {
+  margin:0px;
+  padding: 0px;
+}
+
+.wrap {
+  height: auto;
   position: relative;
-  margin: 0;
-  padding-bottom: 6rem;
+  margin: 0 auto -80px; /* footer height + space */
   min-height: 100%;
   font: normal 100% Helvetica, Arial, sans-serif;
+  padding: 0 0 80px; /* footer height + space */
+  box-sizing: border-box;
   overflow-x:hidden;
 }
 
 footer {
-  padding-top: 1em;
+  margin: 0px;
+  font-size: 1.5em;
   position:absolute;
-  bottom: 0;
+  height: 80px;  /* footer height */
+  padding-top: 20px;
+  display: block;
   width:100%;
   /*height:60px;*/   /* Height of the footer */
   background:#6cf;
-  text-align: center;
   background-color: #45a1ff;
+  text-align: center;
   color: #fff;
 }
 
@@ -41,6 +51,10 @@ footer {
 .modal-header {
   background-color: lightblue;
   border-bottom: 1px solid gray;
+}
+
+.modal-title {
+  font-size: 1.5em;
 }
 
 .modal-footer {
@@ -62,9 +76,6 @@ footer {
   text-align: center;
 }
 
-.PicInfo{
-    text-align: center;
-}
 
 .IconBox {
   margin-left: 0.25em;
@@ -91,19 +102,33 @@ footer {
 }
 
 .NavigationLinkBox {
+  padding-right: 0.25rem;
   float: right;
   text-align: right;
 }
 
 .PicContainer img {
-  padding-top: 1em;
-  width: 100%;
+  margin-top: 2em;
+  width: 50%;
+
+}
+
+.MyPic {
+    margin-top: 15px;
+    flex-grow: 1;
+    border-radius: 30%
+}
+
+.PicInfo{
+    text-align: center;
+
 }
 
 .jumbotron {
     z-index: 1;
     margin-top: 1.0em;
-    margin-bottom: 1em;
+    margin-bottom: 0;
+    padding-bottom: 1em;
     position: relative;
     overflow: hidden;
     text-align: left;
@@ -112,11 +137,6 @@ footer {
     /*background-image: radial-gradient(#4DC1F9, #5CDB72, #A478F9);*/
 }
 
-.MyPic {
-    margin-top: 10px;
-    flex-grow: 1;
-    border-radius: 30%
-}
 
 #buttonResume {
     box-shadow: 0 7px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
@@ -136,11 +156,11 @@ footer {
 }
 
 .jumbotron h1{
-    padding-top: 0.7em;
+    padding-top: 0.1em;
     position: relative;
     z-index: 2;
     font-weight: bold;
-    font-size: 3em;
+    font-size: 2em;
     color: black;
  /*   display: inline-block;*/
     border-bottom: 2px solid black;
@@ -157,7 +177,7 @@ footer {
 .jumbotron #buttonResume{
     position: relative;
     z-index: 2;
-    margin-top: 2em;
+    margin-top: 1em;
     background-color: #9A28DD;
     border-color: #9A28DD;
 }
@@ -205,12 +225,15 @@ hr {
 .allText {
     position: relative;
     font-size: 80%;
+    padding-top: 1em;
+    padding-bottom: 30px;
+    background-color: #E7E7E7;
 }
 
 .allText h4{
   padding: 0;
   display: inline-block;
-  border-bottom: 2px dotted blue;
+  border-bottom: 2px dotted black;
 }
 
 #workReplaceText:not(h2)  {
@@ -227,7 +250,7 @@ hr {
   text-align: left;
   font-size: 1.6em;
   display: inline-block;
-  border-bottom: 1px dotted blue;
+  border-bottom: 1px dotted black;
   padding-left: 0;
 }
 
@@ -246,6 +269,12 @@ hr {
 .skillPageTextParagraph {
   margin-left: 1em;
   margin-right: 1em;
+}
+
+.myProjectsBox h5{
+  font-size: 1em;
+  display: inline-block;
+  border-bottom: 2px solid gray;
 }
 
 .buttonHomeAlign {

@@ -15,6 +15,7 @@ window.addEventListener("resize", function(){
     if (dataStep === 2){resumeTextSettingBoxSize = $('#workReplaceText').height();}
     if (dataStep === 3){resumeTextSettingBoxSize = $('#skillReplaceText').height();}
     if (dataStep === 4){resumeTextSettingBoxSize = $('#eduReplaceText').height();}
+    if (dataStep === 5){resumeTextSettingBoxSize = $('#projectReplaceText').height();}
     $('.allText').css('height', resumeTextSettingBoxSize);
 });
 //---------------------------------------------------
@@ -25,24 +26,35 @@ function getPreviousBox(id, Step){
         if (Step === 2){var oldBox = $("#resume-text-body .slide[data-step=2]");return oldBox;}
         if (Step === 3){var oldBox = $("#resume-text-body .slide[data-step=3]");return oldBox;}
         if (Step === 4){var oldBox = $("#resume-text-body .slide[data-step=4]");return oldBox;}
+        if (Step === 5){var oldBox = $("#resume-text-body .slide[data-step=5]");return oldBox;}
     }
     if(id ==='workNav' || id === 'buttonWork'){
         if (Step === 1){var oldBox = $("#resume-text-body .slide[data-step=1]");return oldBox;}
         if (Step === 2){return "Current page";}
         if (Step === 3){var oldBox = $("#resume-text-body .slide[data-step=3]");return oldBox;}
         if (Step === 4){var oldBox = $("#resume-text-body .slide[data-step=4]");return oldBox;}
+        if (Step === 5){var oldBox = $("#resume-text-body .slide[data-step=5]");return oldBox;}
     }
     if(id ==='skillNav' || id === 'buttonSkills'){
         if (Step === 1){var oldBox = $("#resume-text-body .slide[data-step=1]");return oldBox;}
         if (Step === 2){var oldBox = $("#resume-text-body .slide[data-step=2]");return oldBox;}
         if (Step === 3){return "Current page";}
         if (Step === 4){var oldBox = $("#resume-text-body .slide[data-step=4]");return oldBox;}
+        if (Step === 5){var oldBox = $("#resume-text-body .slide[data-step=5]");return oldBox;}
     }
     if(id ==='eduNav' || id === 'buttonEdu'){
         if (Step === 1){var oldBox = $("#resume-text-body .slide[data-step=1]");return oldBox;}
         if (Step === 2){var oldBox = $("#resume-text-body .slide[data-step=2]");return oldBox;}
         if (Step === 3){var oldBox = $("#resume-text-body .slide[data-step=3]");return oldBox;}
         if (Step === 4){return "Current page";}
+        if (Step === 5){var oldBox = $("#resume-text-body .slide[data-step=5]");return oldBox;}
+    }
+    if(id ==='projectNav'){
+        if (Step === 1){var oldBox = $("#resume-text-body .slide[data-step=1]");return oldBox;}
+        if (Step === 2){var oldBox = $("#resume-text-body .slide[data-step=2]");return oldBox;}
+        if (Step === 3){var oldBox = $("#resume-text-body .slide[data-step=3]");return oldBox;}
+        if (Step === 4){var oldBox = $("#resume-text-body .slide[data-step=4]");return oldBox;}
+        if (Step === 5){return "Current page";}
     }
 }
 function slideThoseBoxes($newBox, $oldBox) {
@@ -62,24 +74,35 @@ function recolorTheNav(newHighlight){
         document.getElementById('workNav').style.color = "gray";
         document.getElementById('skillNav').style.color = "gray";
         document.getElementById('eduNav').style.color = "gray";
+        document.getElementById('projectNav').style.color = "gray";
     }
     if(newHighlight === 'workNav' || newHighlight === 'buttonWork'){
         document.getElementById('homeNav').style.color = "gray";
         document.getElementById('workNav').style.color = "white";
         document.getElementById('skillNav').style.color = "gray";
         document.getElementById('eduNav').style.color = "gray";
+        document.getElementById('projectNav').style.color = "gray";
     }
     if(newHighlight === 'skillNav' || newHighlight === 'buttonSkills'){
         document.getElementById('homeNav').style.color = "gray";
         document.getElementById('workNav').style.color = "gray";
         document.getElementById('skillNav').style.color = "white";
         document.getElementById('eduNav').style.color = "gray";
+        document.getElementById('projectNav').style.color = "gray";
     }
     if(newHighlight === 'eduNav' || newHighlight === 'buttonEdu'){
         document.getElementById('homeNav').style.color = "gray";
         document.getElementById('workNav').style.color = "gray";
         document.getElementById('skillNav').style.color = "gray";
         document.getElementById('eduNav').style.color = "white";
+        document.getElementById('projectNav').style.color = "gray";
+    }
+    if(newHighlight === 'projectNav'){
+        document.getElementById('homeNav').style.color = "gray";
+        document.getElementById('workNav').style.color = "gray";
+        document.getElementById('skillNav').style.color = "gray";
+        document.getElementById('eduNav').style.color = "gray";
+        document.getElementById('projectNav').style.color = "white";
     }
 }
 document.getElementById('homeNav').addEventListener("click", function(e){
@@ -138,6 +161,21 @@ document.getElementById('eduNav').addEventListener("click", function(e){
     slideThoseBoxes($newBox, $oldBox);
     recolorTheNav('eduNav');
     dataStep = 4;
+});
+document.getElementById('projectNav').addEventListener("click", function(e){
+    e.preventDefault(); // stop from scrolling back to top of page
+    scrolIDIntoView('projectReplaceText'); 
+    //Set the box size to match text it takes up.
+    resumeTextSettingBoxSize = $('#projectReplaceText').height();
+    $('.allText').css('height', resumeTextSettingBoxSize);
+    let $oldBox = getPreviousBox('projectNav', dataStep);
+    //check if we are selecting the same page to transition to
+    if ($oldBox === "Current page"){return console.log("We are already on that page.");}
+    let $newBox = $("#resume-text-body .slide[data-step=5]");
+    slideThoseBoxes($newBox, $oldBox);
+    recolorTheNav('projectNav');
+    dataStep = 5;
+    console.log("The height of resumeTextSettingBoxSize:" + resumeTextSettingBoxSize);
 });
 window.onload = function(){
     var homeButtons = document.getElementsByClassName('buttonHome');
