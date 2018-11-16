@@ -207,6 +207,14 @@ hr {
 }
 
 
+.SkillsTitleInfo{
+  text-align: center;
+}
+
+.awardsTitle {
+  text-align: center;
+}
+
 .introText {
     z-index: -5;
 }

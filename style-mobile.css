@@ -217,6 +217,14 @@ hr {
     font-weight: bold;
 }
 
+.SkillsTitleInfo {
+  text-align: center;
+}
+
+.awardsTitle {
+  text-align: center;
+}
+
 
 .introText {
     z-index: -5;
@@ -264,11 +272,6 @@ hr {
 
 .slide {
     position: absolute; right: 0; left: 0;
-}
-
-.skillPageTextParagraph {
-  margin-left: 1em;
-  margin-right: 1em;
 }
 
 .myProjectsBox h5{
